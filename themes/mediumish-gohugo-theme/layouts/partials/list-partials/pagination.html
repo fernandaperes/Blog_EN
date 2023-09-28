@@ -9,7 +9,7 @@
           <a class="ml-1 mr-1" href="{{.Prev.URL}}">&laquo; Anterior</a>
           <a class="ml-1 mr-1" href="{{.Prev.URL}}">{{ .Prev.PageNumber }}</a>
         {{ else }}
-          <span>&laquo; Anterior</span>
+          <span>&laquo; Previous</span>
         {{ end }}
 
         <span class="ml-1 mr-1">{{ .PageNumber }}</span>
@@ -18,7 +18,7 @@
           <a class="ml-1 mr-1" href="{{.Next.URL}}">{{ .Next.PageNumber }}</a>
           <a class="ml-1 mr-1" href="{{.Next.URL}}">Próxima &raquo;</a>
         {{ else }}
-          <span>Próxima &raquo;</span>
+          <span>Next &raquo;</span>
         {{ end }}
       </div>
     {{ end }}

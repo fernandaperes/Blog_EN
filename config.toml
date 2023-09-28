@@ -1,10 +1,10 @@
 baseURL = "https://en.fernandafperes.com.br/"
-languageCode = "pt-br"
-defaultContentLanguage = "pt-br"
-title = "Fernanda Peres | Estatística aplicada"
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "Fernanda Peres | Data Analysis"
 theme = "mediumish-gohugo-theme"
 summaryLength = 25
-copyright = "Fernanda Fiel Peres - Todos os direitos reservados"
+copyright = "Fernanda Fiel Peres - All rights reserved"
 enableEmoji = true
 publishDir = "docs"
 ignoreFiles = ['_bookdown.yml']

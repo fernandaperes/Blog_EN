@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Fernanda Peres | Estatística aplicada</title>
+    <title>Fernanda Peres | Data Analysis</title>
     <link>https://en.fernandafperes.com.br/</link>
-    <description>Recent content on Fernanda Peres | Estatística aplicada</description>
+    <description>Recent content on Fernanda Peres | Data Analysis</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>pt-br</language>
-    <copyright>Fernanda Fiel Peres - Todos os direitos reservados</copyright>
+    <language>en</language>
+    <copyright>Fernanda Fiel Peres - All rights reserved</copyright>
     <lastBuildDate>Tue, 29 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://en.fernandafperes.com.br/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Como interpretar (e construir) um gráfico boxplot?</title>
