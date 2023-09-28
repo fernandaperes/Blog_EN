@@ -45,6 +45,12 @@ Currently trying to get this blog running, still don't know what the blog will b
 ## Main Menu
 
 [[menu.main]]
+    name = "PT-BR"
+    identifier = "language"
+    weight = 5
+    url = "https://fernandafperes.com.br"
+
+[[menu.main]]
     name = "BLOG"
     weight = 20
     identifier = "blog"
@@ -53,23 +59,15 @@ Currently trying to get this blog running, still don't know what the blog will b
     description = "Blog"
 
 [[menu.main]]
-    name = "SOBRE"
-    identifier = "sobre"
-    title = "Sobre"
+    name = "ABOUT"
+    identifier = "about"
+    title = "About"
     weight = 30
-    url = "/sobre"
-    description = "Sobre"
-    
-[[menu.main]]
-    name = "SERVIÇOS"
-    identifier = "servicos"
-    title = "Serviços"
-    weight = 40
-    url = "/servicos"
-    description = "Serviços"
+    url = "/about"
+    description = "About"
 
 [[menu.main]]
-    name = "PÁGINA INICIAL"
-    identifier = "pagina-inicial"
+    name = "HOME"
+    identifier = "home"
     weight = 10
     url = "/"
