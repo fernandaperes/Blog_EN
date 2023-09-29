@@ -23,10 +23,10 @@
 	<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://en.fernandafperes.com.br/blog/boxplot-interpretation/cover.png"/>
 <meta name="twitter:title" content="How to construct and interpret a boxplot"/>
-<meta name="twitter:description" content="If you are in academia or work with data analysis, you have probably encountered a somewhat peculiar-looking plot such as the above. This type of plot is named boxplot."/>
+<meta name="twitter:description" content="If you are in academia or work with data analysis, you have probably encountered a somewhat peculiar-looking plot such as the above (based on the research article of Schenk &amp; Steppan (2014))."/>
 
 	<meta property="og:title" content="How to construct and interpret a boxplot" />
-<meta property="og:description" content="If you are in academia or work with data analysis, you have probably encountered a somewhat peculiar-looking plot such as the above. This type of plot is named boxplot." />
+<meta property="og:description" content="If you are in academia or work with data analysis, you have probably encountered a somewhat peculiar-looking plot such as the above (based on the research article of Schenk &amp; Steppan (2014))." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://en.fernandafperes.com.br/blog/boxplot-interpretation/" /><meta property="og:image" content="https://en.fernandafperes.com.br/blog/boxplot-interpretation/cover.png"/><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2022-03-29T00:00:00+00:00" />
@@ -252,9 +252,9 @@
                         
 
 
-<p>If you are in academia or work with data analysis, you have probably encountered a somewhat peculiar-looking plot such as the above. This type of plot is named boxplot. In this post, we are going to discuss how to interpret it.</p>
+<p>If you are in academia or work with data analysis, you have probably encountered a somewhat peculiar-looking plot such as the above (based on the research article of <span class="citation">Schenk &amp; Steppan (<a href="#ref-schenk2014too">2014</a>)</span>). This type of plot is named boxplot. In this post, we are going to discuss how to interpret it.</p>
 <p>Boxplot depicts five parameters of the data: minimum value (that is not an outlier), first quartile (Q1), median (= second quartile), third quartile (Q3) and maximum value (that is not an outlier). It also depicts any outlier value. Therefore, to properly interpret a boxplot, we need to understand each of these parameters.</p>
-<p><img src="g2.png" width="350px" style="display: block; margin: auto;" /></p>
+<p><img src="g2.png" width="450px" style="display: block; margin: auto;" /></p>
 <div id="quartiles-and-median" class="section level3">
 <h3>Quartiles and median</h3>
 <p>As you can see in the figure above, quartiles are the parameters that delimit the box in a boxplot. Ok, but what are quartiles? I find it easier to understand quartiles after understanding the median. So, we will start with the median.</p>
@@ -308,58 +308,55 @@ On the other hand, there is one value above our theoreticall upper limit: 43. Th
 </div>
 <div id="horizontal-boxplots" class="section level3">
 <h3>Horizontal boxplots</h3>
-<p>É possível (e até comum em algumas áreas) representar boxplots na horizontal, ou seja, com a variável de grupo no eixo y (vertical) e a variável numérica no eixo x (horizontal).<br />
-A interpretação será a mesma. Veja abaixo o mesmo boxplot que construímos, mas na horizontal:</p>
+<p>We can also plot a boxplot with horizontal orientation, with group variable in y-axis and numeric variable in the x-axis, as we can see in the figure below. We will interpret this plot exacly as we have interpreted the previous one.</p>
 <p><img src="g8.png" width="330px" style="display: block; margin: auto;" /></p>
-<p>Eu confesso que sou tradicional e tendo a preferir os boxplots na vertical, mas é uma questão de estilo. Sinta-se livre para usar como preferir.</p>
 </div>
-<div id="e-os-boxplots-esquisitinhos" class="section level3">
-<h3>E os boxplots esquisitinhos?</h3>
-<p>Quando eu fiz um conteúdo no <a href="https://instagram.com/estatisticaaplicada">Instagram</a> explicando a construção e interpretação de boxplots, a pergunta que eu mais recebi foi: “tá, mas e aqueles boxplots com pedaços faltando?”.<br />
-As pessoas se referiam a boxplots como o do grupo “Graduação” no gráfico abaixo, mostrado no início do post:</p>
+<div id="ok-but-what-about-the-weird-boxplots" class="section level3">
+<h3>Ok, but what about the weird boxplots?</h3>
+<p>When I posted some content about boxplot on <a href="https://instagram.com/estatisticaaplicada">my Instagram account</a> (in PT-BR), the question I received the most was: “ok, but how to interpret the boxplots with missing pieces?”.<br />
+People were talking about boxplots such as the one for Faculty in the plot below:</p>
 <div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
-<img src="g1.png" alt="Gráfico boxplot, inspirado no gráfico do artigo de @schenk2014too." width="350px" />
+<img src="g1.png" alt="Boxplot based on the research article of @schenk2014too." width="350px" />
 <p class="caption">
-Figura 1: Gráfico boxplot, inspirado no gráfico do artigo de <span class="citation">Schenk &amp; Steppan (<a href="#ref-schenk2014too">2014</a>)</span>.
+Figura 1: Boxplot based on the research article of <span class="citation">Schenk &amp; Steppan (<a href="#ref-schenk2014too">2014</a>)</span>.
 </p>
 </div>
-<p>Mas, não há muito segredo. Todos os elementos que vimos - limite inferior, Q1, Q2, Q3, limite inferior - sempre estarão no boxplot. Se você não está enxergando um deles, é porque seu valor coincide com outro, e haverá sobreposição no gráfico.<br />
-No caso do grupo “Graduação”, a mediana está sobreposta ao Q3 e ao limite superior - ou seja, para esse grupo a mediana, o Q3 e o limite superior são valores idênticos. É por isso que não estamos vendo o T se projetando para além do topo da caixa e é também por isso que o topo da caixa está representado por uma linha mais grossa que a base da caixa (indicando que a mediana está lá).</p>
-<p>Vejamos mais alguns exemplos.</p>
-<p>No gráfico abaixo, a mediana se sobrepõe ao Q1 (note que a base da caixa está representada por uma linha mais grossa):</p>
+<p>But there’s not much mystery to it. All the elements we’ve discussed - the lower limit, Q1, Q2, Q3, and upper limit - will always be present in a boxplot. If you’re not seeing one of them, it’s because its value coincides with another one, and they are overlaping in the plot.</p>
+<p>In the Faculty group, the median is overlapped with Q3 and with the upper limit - in other words, for this group, the median, Q3, and the upper limit are identical. That is why we don’t see the “T” projecting itself beyond the top of the box, and it is also why the top of the box is represented by a thicker line than the bottom of the box: this indicates that the median is there, in the top.</p>
+<p>Let’s check some other examples.</p>
+<p>In the plot below, median overlaps with Q1. We know that because the bottom of the box is represented by a thicker line:</p>
 <p><img src="g9.png" width="180px" style="display: block; margin: auto;" /></p>
-<p>Já nesse gráfico, a mediana se sobrepõe ao Q1 (a base da caixa está representada por uma linha mais grossa) e o limite superior está sobreposto ao Q3 (não há o clássico T se projetando paa além do limite superior):</p>
+<p>In this next plot, the median overlaps with Q1 (the bottom of the box is represented by a thicker line), and the upper limit is overlapped with Q3 (there is no “T” extending beyond the upper limit):</p>
 <p><img src="g10.png" width="180px" style="display: block; margin: auto;" /></p>
 </div>
-<div id="quando-usar-um-gráfico-boxplot" class="section level3">
-<h3>Quando usar um gráfico boxplot?</h3>
-<p>Em quais situações faz sentido usar um gráfico boxplot?<br />
-Trata-se de um gráfico usado quando queremos representar a distribuição de uma <strong>variável numérica ou, pelo menos, ordinal</strong>. No caso, representamos a distribuição da variável idade na nossa amostra.<br />
-Além da variável numérica/ ordinal, podemos <strong>incluir uma variável de grupo</strong>, como o boxplot do começo do post. Esse boxplot que mostra a distribuição da quantidade de páginas de artigos selecionados por alunos divididos em três grupos: graduação, pós-graduação e pós-doutorado. Basta uma rápida olhada para percebermos que a mediana de páginas do grupo “Graduação” é inferior às medianas dos demais grupos. Podemos também observar que o grupo com maior variação absoluta (ou seja, maior diferença entre o maior e menor valor) é o grupo “Pós-graduação”. Já o grupo “Pós-doutorado” apresenta a maior amplitude interquartil (ou seja, a caixa mais alta). Poderíamos também usar o boxplot para avaliar a simetria da distribuição, mas essa discussão fica para outro post.</p>
-<img src="g1.png" width="350px" style="display: block; margin: auto;" />
-<center>
-Gráfico boxplot, inspirado no gráfico do artigo de <span class="citation">Schenk &amp; Steppan (<a href="#ref-schenk2014too">2014</a>)</span>.
-</center>
-<p><br></p>
-<p>Além disso, perceba que o boxplot não é baseado em média nem em medidas de dispersão derivadas da média (como desvio-padrão e variância). Portanto, é um gráfico excelente para <strong>distribuições que não são bem representadas pela média</strong>, sendo ótimo para distribuições não-normais.</p>
-<p>Mas, claro, não é um gráfico para todas as audiências. Veja quantos parágrafos eu gastei para explicá-lo nesse texto. O boxplot é excelente para uso pelo time de dados, para publicações acadêmicas, mas em geral péssimo para contextos como divulgação científica e matérias jornalísticas.</p>
+<div id="when-to-use-a-boxplot" class="section level3">
+<h3>When to use a boxplot?</h3>
+<p>In what situations one should to use a boxplot?</p>
+<p>A boxplot is used when we want to represent the distribution of a <strong>numerical or ordinal variable</strong>. In our example, we represented the distribution of the variable “age” (a numerical variable) in our sample.</p>
+<p>In addition to the numeric/ordinal variable, we can <strong>include a grouping variable</strong>, as shown in the boxplot at the beginning of the post. This boxplot displays the distribution of the number of pages of articles selected by students divided into three groups: faculty, graduate students, and postdocs. We can easily see that the median number of pages in the “Faculty” group is lower than the medians of the other groups. Also, the group with the highest absolute variation (i.e., the greatest difference between the highest and lowest values) is the “Graduate students” group. On the other hand, the “Postdocs” group exhibits the highest interquartile range (i.e., the tallest box). Boxplot can also be used to evaluate the symmetry of the distribution, but this is a discussion for another post.</p>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
+<img src="g1.png" alt="Boxplot based on the research article of @schenk2014too." width="350px" />
+<p class="caption">
+Figura 2: Boxplot based on the research article of <span class="citation">Schenk &amp; Steppan (<a href="#ref-schenk2014too">2014</a>)</span>.
+</p>
 </div>
-<div id="como-fazer-um-boxplot" class="section level3">
-<h3>Como fazer um boxplot?</h3>
-<p>Nas suas últimas versões, o Excel implementou o boxplot. <a href="https://youtu.be/DWs98A0yCMQ">Nesse vídeo</a> eu explico como fazê-lo.</p>
-<p>Se você for um amante do R (como eu), minha sugestão é montar o boxplot pelo pacote <code>ggplot2</code>. Eu tenho um vídeo bem detalhado sobre <a href="https://youtu.be/-XQPlOG12vc">boxplot no ggplot2</a>.<br />
-Se ggplot2 é algo que te angustia (socorro, por que tantas linhas para gerar um único gráfico?), eu tenho uma playlist com vários vídeos ensinando a construir <a href="https://youtube.com/playlist?list=PLOw62cBQ5j9X5eOavzeu9CaHMO6TFsPkY">gráficos no ggplot2 do zero</a>. Efeitos colaterais de aprender a mexer no ggplot2: amor incondicional e não querer fazer sequer um gráfico de barras em outro software, haha!</p>
-<p>Mas, vou deixar um código simples, para você usar como base. Partindo de um <code>data frame</code> chamado <code>dados</code> contendo os grupos em uma coluna e a quantidade de páginas em outra, temos:</p>
-<pre class="r"><code>ggplot(dados, aes(x = Grupo, y = Páginas)) +
+<p>You should also notice that boxplot is not based on the mean or on measures of dispersion related to the mean (e.g. variance and standard deviation). Therefore, it is an excellent plot for distributions that <strong>are not well represented by the mean</strong>, making it great for non-normal distributions.</p>
+<p>Of course, it is not a graph for all audiences. It took me lots of paragraphs to explain it. The boxplot is an excellent plot for academic publications or for data exploring by data scientists/ analysts. But, it is not well-suited for scientific communication or news articles.</p>
+</div>
+<div id="how-to-construct-a-boxplot" class="section level3">
+<h3>How to construct a boxplot?</h3>
+<p>It is possible to create a boxplot in Excel. You can find the step-by-step on <a href="https://youtu.be/39lsUsJsc2c?si=VQtLH8XjcO6mU8-H">YouTube videos</a>.</p>
+<p>If you are a fan of R programming, my suggestion is to create the boxplot using the <code>ggplot2</code> package. The details of the grammar of graphs, used by <code>ggplot2</code>, are beyond the scope of this post. But, with the code below you will be able to create a simple boxplot. Using a data frame called <code>data</code> containing the groups in one column (Group) and the number of pages in another (Pages):</p>
+<pre class="r"><code>ggplot(data, aes(x = Group, y = Pages)) +
   geom_errorbar(stat = &quot;boxplot&quot;, width = 0.3) +
   geom_boxplot(outlier.shape = 1, fill = &quot;grey95&quot;) +
-  labs(y = &quot;Quantidade de páginas&quot;) +
+  labs(y = &quot;Number of pages&quot;) +
   theme_classic()</code></pre>
 <p><img src="g11.png" width="400px" style="display: block; margin: auto;" /></p>
 <hr />
 </div>
-<div id="referências" class="section level3 unnumbered">
-<h3>Referências:</h3>
+<div id="references" class="section level3 unnumbered">
+<h3>References:</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-hyndman1996sample" class="csl-entry">
 Hyndman, R. J., &amp; Fan, Y. (1996). Sample quantiles in statistical packages. <em>The American Statistician</em>, <em>50</em>(4), 361–365.
@@ -376,8 +373,6 @@ Schenk, J. J., &amp; Steppan, S. J. (2014). Too long to read: Assessing the moti
                     
                     <div class="row PageNavigation d-flex justify-content-between font-weight-bold after-post">
                     
-                    
-                        <a class="d-block col-md-6 text-lg-right" href="https://en.fernandafperes.com.br/blog/intervalo-de-confianca/">Como interpretar o intervalo de confiança? &raquo;</a>
                     
                     <div class="clearfix"></div>
                     </div>
@@ -397,26 +392,28 @@ Schenk, J. J., &amp; Steppan, S. J. (2014). Too long to read: Assessing the moti
        
 
   
-            <div id="disqus_thread"></div>
-<script type="application/javascript">
-    window.disqus_config = function () {
-    
-    
-    
+            
+<section id="comments">
+  <div id="disqus_thread"></div>
+  <script>
+  
+  (function() {
+   var inIFrame = function() {
+      var iframe = true;
+      try { iframe = window.self !== window.top; } catch (e) {}
+      return iframe;
     };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "fernandafperes" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
+    if (inIFrame()) return;
+    var d = document, s = d.createElement('script');
+    s.src = '//fernandafperes.disqus.com/embed.js'; s.async = true;
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+            
         </div>
     </div>
 </div>
