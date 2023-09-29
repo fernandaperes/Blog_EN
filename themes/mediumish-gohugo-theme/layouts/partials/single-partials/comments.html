@@ -15,8 +15,14 @@
   </div>
   <br><br>
 --->
+
+{{ with .Site.Params.disqusURL }}
+{{ template "_internal/disqus.html" . }}
+  var disqus_config = function () { 
+  this.language = "en";
+};
+  {{ end }}
   
-            {{ template "_internal/disqus.html" . }}               
         </div>
     </div>
 </div>
