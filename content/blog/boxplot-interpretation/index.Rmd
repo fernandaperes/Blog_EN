@@ -206,12 +206,12 @@ g9 <- ggplot(dados, aes(y = dados)) +
         axis.ticks.x = element_blank(),
         text = element_text(family = "Nunito"))
 
-ggsave(plot = g9, "g9.png", height = 2, width = 2.8, dpi = 400)
+ggsave(plot = g9, "g9.png", height = 2.8, width = 2.3, dpi = 400)
 
 knitr::include_graphics("g9.png")
 ```
   
-In the plot below, the median overlaps with Q1 (the bottom of the box is represented by a thicker line), and the upper limit is overlapped with Q3 (there is no "T" extending beyond the upper limit): 
+In this next plot, the median overlaps with Q1 (the bottom of the box is represented by a thicker line), and the upper limit is overlapped with Q3 (there is no "T" extending beyond the upper limit): 
   
 ```{r, echo=FALSE, fig.align='center', out.width = '180px'}
 dados <- c(22, 22, 25, 25, 25, 25, 34, 34, 34, 34)
@@ -229,7 +229,7 @@ g10 <- ggplot(dados, aes(y = dados)) +
         axis.ticks.x = element_blank(),
         text = element_text(family = "Nunito"))
 
-ggsave(plot = g10, "g10.png", height = 2, width = 2.8, dpi = 400)
+ggsave(plot = g10, "g10.png", height = 2.8, width = 2.3, dpi = 400)
 
 knitr::include_graphics("g10.png")
 ```
@@ -247,26 +247,30 @@ In addition to the numeric/ordinal variable, we can **include a grouping variabl
 knitr::include_graphics("g1.png")
 ```
   
+You should also notice that boxplot is not based on the mean or on measures of dispersion related to the mean (e.g. variance and standard deviation). Therefore, it is an excellent plot for distributions that **are not well represented by the mean**, making it great for non-normal distributions.  
   
-Além disso, perceba que o boxplot não é baseado em média nem em medidas de dispersão derivadas da média (como desvio-padrão e variância). Portanto, é um gráfico excelente para **distribuições que não são bem representadas pela média**, sendo ótimo para distribuições não-normais.  
+Of course, it is not a graph for all audiences. It took me lots of paragraphs to explain it. The boxplot is an excellent plot for academic publications or for data exploring by data scientists/ analysts. But, it is not well-suited for scientific communication or news articles.  
   
-Mas, claro, não é um gráfico para todas as audiências. Veja quantos parágrafos eu gastei para explicá-lo nesse texto. O boxplot é excelente para uso pelo time de dados, para publicações acadêmicas, mas em geral péssimo para contextos como divulgação científica e matérias jornalísticas.  
   
-### Como fazer um boxplot?  
+### How to construct a boxplot?  
   
-Nas suas últimas versões, o Excel implementou o boxplot. [Nesse vídeo](https://youtu.be/DWs98A0yCMQ) eu explico como fazê-lo.  
+It is possible to create a boxplot in Excel. You can find the step-by-step on [YouTube videos](https://youtu.be/39lsUsJsc2c?si=VQtLH8XjcO6mU8-H).  
   
-Se você for um amante do R (como eu), minha sugestão é montar o boxplot pelo pacote `ggplot2`. Eu tenho um vídeo bem detalhado sobre [boxplot no ggplot2](https://youtu.be/-XQPlOG12vc).  
-Se ggplot2 é algo que te angustia (socorro, por que tantas linhas para gerar um único gráfico?), eu tenho uma playlist com vários vídeos ensinando a construir [gráficos no ggplot2 do zero](https://youtube.com/playlist?list=PLOw62cBQ5j9X5eOavzeu9CaHMO6TFsPkY). Efeitos colaterais de aprender a mexer no ggplot2: amor incondicional e não querer fazer sequer um gráfico de barras em outro software, haha!  
-  
-Mas, vou deixar um código simples, para você usar como base. Partindo de um `data frame` chamado `dados` contendo os grupos em uma coluna e a quantidade de páginas em outra, temos:
-  
+If you are a fan of R programming, my suggestion is to create the boxplot using the `ggplot2` package. The details of the grammar of graphs, used by `ggplot2`, are beyond the scope of this post. But, with the code below you will be able to create a simple boxplot. Using a data frame called `data` containing the groups in one column (Group) and the number of pages in another (Pages):  
   
 ```{r, include=FALSE}
-g11 <- ggplot(dados, aes(x = Grupo, y = Páginas)) +
+Pages <- c(4, 5, 6, 6, 11, 1, 4, 6, 13, 15, 15, 18, 19,
+             32, 2, 4, 6, 13, 18, 18, 21, 21, 25)
+Group <- c(rep("Faculty", 5), rep("Graduate students", 9), rep("Postdocs", 9))
+
+data <- as.data.frame(list(Pages = Pages, Group = Group))
+data$Group <- factor(Group, levels = c("Faculty", "Graduate students", "Postdocs"))
+
+
+g11 <- ggplot(data, aes(x = Group, y = Pages)) +
   geom_errorbar(stat = "boxplot", width = 0.3) +
   geom_boxplot(outlier.shape = 1, fill = "grey95") +
-  labs(y = "Quantidade de páginas") +
+  labs(y = "Number of pages") +
   theme_classic()
 
 ggsave(plot = g11, "g11.png", height = 2.5, width = 3.4, dpi = 400)
@@ -274,10 +278,10 @@ ggsave(plot = g11, "g11.png", height = 2.5, width = 3.4, dpi = 400)
   
 
 ```{r, eval=FALSE}
-ggplot(dados, aes(x = Grupo, y = Páginas)) +
+ggplot(data, aes(x = Group, y = Pages)) +
   geom_errorbar(stat = "boxplot", width = 0.3) +
   geom_boxplot(outlier.shape = 1, fill = "grey95") +
-  labs(y = "Quantidade de páginas") +
+  labs(y = "Number of pages") +
   theme_classic()
 ```
 ```{r, echo=FALSE, fig.align='center', out.width='400px'}
@@ -289,5 +293,5 @@ knitr::include_graphics("g11.png")
   
 ***
   
-### Referências:  
+### References:  
   
