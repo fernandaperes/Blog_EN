@@ -10,9 +10,9 @@ type: "static"
 
 ### Hi! I am Fernanda
 
-I am a data analyst with a background in biomedical sciences from Brazil. I am also an R-Lady.  
+I am a data analyst with a background in biomedical sciences. I am from Brazil and I am also an [R-Lady](https://rladies-sp.org/).  
   
-Since 2017, I have been creating content about statistics and data analysis for research workers on [my YouTube channel](https://youtube.com/c/FernandaPeres). My main interests are hypothesis testing, data visualization and R Programming.    
+Since 2017, I create content about statistics and data analysis for research workers on [my YouTube channel](https://youtube.com/c/FernandaPeres). My main interests are hypothesis testing, data visualization and R Programming.    
   
 <br>
 </div>
