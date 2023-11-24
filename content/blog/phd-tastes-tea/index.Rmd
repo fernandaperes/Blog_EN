@@ -1,7 +1,7 @@
 ---
 title: "How to properly interpret p-value?"
 author: Fernanda Fiel Peres
-date: '2021-06-05'
+date: '2023-11-24'
 categories: []
 tags: ['statistical theory', 'p-value']
 comments: yes
@@ -26,12 +26,12 @@ The purpose of this blog post is to elucidate these concepts through the history
   
 ### The problem
   
-Legend - and Ronald Fisher's biography - say that, in one afternoon in the late 1920s, three research workers at the Rothamsted Experimental Station in UK, two men and a woman, took a break to a nice cup of tea.  
+Legend - and Ronald Fisher's biography - say that, in one afternoon in the late 1920s, three research workers at the Rothamsted Experimental Station took a break to have a nice cup of tea. The researchers were two men and a woman.   
   
 ```{r, echo=FALSE, fig.align='center', out.width = '450px'}
 knitr::include_graphics("img1.png")
 ```
-<center><font size = '3'>Rothamsted Experimental Station</font></center>
+<center><font size = '3'>Rothamsted Experimental Station in UK</font></center>
 <br><br>  
    
 One of the man 
