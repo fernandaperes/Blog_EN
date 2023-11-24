@@ -34,8 +34,6 @@ knitr::include_graphics("img1.png")
 <center><font size = '3'>Rothamsted Experimental Station in UK</font></center>
 <br><br>  
    
-One of the man 
-  
 One of the men poured milk to the cup, added tea, mixed it, and offered the cup to his female co-worker. She politely declined, saying that she preferred when tea was added before milk. He argued that the order didn't make a difference. She insisted, claiming that she could taste the difference and preferred it when the tea was added first.  
   
 ```{r, echo=FALSE, fig.align='center', out.width = '150px'}
