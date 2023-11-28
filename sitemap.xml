@@ -9,32 +9,47 @@
 
 <url>
   <loc>https://en.fernandafperes.com.br/</loc>
-  <lastmod>2023-09-29T22:14:17+00:00</lastmod>
+  <lastmod>2023-11-28T21:47:07+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://en.fernandafperes.com.br/blog/</loc>
-  <lastmod>2023-09-29T22:14:17+00:00</lastmod>
+  <lastmod>2023-11-28T21:47:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://en.fernandafperes.com.br/about/</loc>
-  <lastmod>2023-09-29T22:14:17+00:00</lastmod>
+  <lastmod>2023-11-28T21:47:07+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://en.fernandafperes.com.br/blog/phd-tastes-tea/</loc>
+  <lastmod>2023-11-28T21:47:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://en.fernandafperes.com.br/blog/boxplot-interpretation/</loc>
-  <lastmod>2023-09-29T22:14:17+00:00</lastmod>
+  <lastmod>2023-11-28T21:47:07+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://en.fernandafperes.com.br/tags/dataviz/</loc>
-  <lastmod>2023-09-29T22:14:17+00:00</lastmod>
+  <lastmod>2023-11-28T21:47:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 <url>
   <loc>https://en.fernandafperes.com.br/tags/ggplot2/</loc>
-  <lastmod>2023-09-29T22:14:17+00:00</lastmod>
+  <lastmod>2023-11-28T21:47:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://en.fernandafperes.com.br/tags/p-value/</loc>
+  <lastmod>2023-11-28T21:47:07+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://en.fernandafperes.com.br/tags/statistical-theory/</loc>
+  <lastmod>2023-11-28T21:47:07+00:00</lastmod>
   <priority>0.64</priority>
 </url>
 
