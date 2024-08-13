@@ -1,5 +1,5 @@
 ---
-title: "How to create and interpret a boxplot"
+title: "How to interpret a boxplot"
 author: Fernanda Fiel Peres
 date: '2023-09-29'
 slug: [boxplot-interpretation]
