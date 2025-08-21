@@ -18,7 +18,7 @@ Since 2017, I create content about statistics and data analysis for research wor
 </div>
 
 <div class="column2">
-<img width="230" src="/static/sobre_files/author.png" alt="" loading="lazy">
+<img width="230" src="/static/sobre_files/author.jpg" alt="" loading="lazy">
 <br>
 </div>
 
