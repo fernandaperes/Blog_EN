@@ -10,9 +10,9 @@ type: "static"
 
 ### Hi! I am Fernanda
 
-I am a data analyst with a background in biomedical sciences from Brazil. I am also an R-Lady.  
+I am a data analyst with a background in biomedical sciences. I am from Brazil and I am also an [R-Lady](https://rladies-sp.org/).  
   
-Since 2017, I have been creating content about statistics and data analysis for research workers on [my YouTube channel](https://youtube.com/c/FernandaPeres). My main interests are hypothesis testing, data visualization and R Programming.    
+Since 2017, I create content about statistics and data analysis for research workers on [my YouTube channel](https://youtube.com/c/FernandaPeres). My main interests are hypothesis testing, data visualization and R Programming.    
   
 <br>
 </div>
@@ -48,13 +48,13 @@ Since 2017, I have been creating content about statistics and data analysis for 
 
 <li>
 <p>2013 - 2015</p>
-<p>Masters in Pharmacology</p>
+<p>Master of Science in Pharmacology</p>
 <p><i>Universidade Federal de São Paulo (UNIFESP)</i></p>
 </li>
 
 <li>
 <p>2009 - 2012</p>
-<p>Graduation in Biomedical Sciences</p>
+<p>Bachelor in Biomedical Sciences</p>
 <p><i>Universidade Federal de São Paulo (UNIFESP)</i></p>
 </li>
 
@@ -80,25 +80,25 @@ Since 2017, I have been creating content about statistics and data analysis for 
 <ul>
 
 <li class = "g">
-<p>2018 - atual</p>
+<p>2018 - Now</p>
 <p>Data analyst and scientifical consultant</p>
 <p><i>For research workers</i></p>
 </li>
 
 <li class = "t">
-<p>2022 - atual</p>
+<p>2022 - Now</p>
 <p>Professor of Biostatistics in the Specialization Course in Pathophysiology</p>
 <p><i>Universidade Federal de São Paulo (UNIFESP)</i></p>
 </li>
 
 <li class = "t">
-<p>2021 - atual</p>
+<p>2021 - Now</p>
 <p>Professor of Data Science e Data Analytics Courses</p>
 <p><i>Tera</i></p>
 </li>
 
 <li class = "t">
-<p>2019 - atual</p>
+<p>2019 - Now</p>
 <p>Professor of Psychopharmacology in the Specialization Course in Neurosciences</p>
 <p><i>Universidade Federal de São Paulo (UNIFESP)</i></p>
 </li>

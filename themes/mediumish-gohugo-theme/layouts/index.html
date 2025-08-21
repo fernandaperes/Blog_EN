@@ -3,19 +3,66 @@
 {{ end }}
 
 {{ define "main" }}
+
+
+
     <div class="main-content">
         <section class="recent-posts">
             <div class="section-title2">
-                <h2><span>Recent posts</span></h2>
+                <h2><span>Latest blog posts</span></h2>
             </div>
             <div class="row listrecent">
                 {{- range ( where site.RegularPages "Section" "blog" | first 3 ) }}
                     {{- partial "list-partials/postbox.html" . -}}
                 {{end}}
+                
             </div>
         </section>
 
     </div>
+    
+    <center>
+      <a href="https://en.fernandafperes.com.br/blog" class="buttonhome">
+      Browse all blog posts
+      </a>
+    </center>
+
+
+
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+<div class="main-content">
+<section class="recent-posts">
+  
+<div class="sobre-home">
+  
+  <div class = "img-wrapper">
+    <img width="230" src="/static/sobre_files/author.jpg" alt="" loading="lazy">
+  </div>
+
+  <div class="textblock">
+
+    <h4>Hi, I'm Fernanda Peres</h4>
+    <p>I'm a scientist who loves working with data. For years, I've been helping researchers bring their projects to life through data analysis.</p>
+
+     <a href="https://en.fernandafperes.com.br/about" class="buttonsobrehome">
+     Check out my full CV
+     </a>
+  
+  </div>
+
+</div>
+
+</section>
+</div>
+
+
     {{ if isset .Site.Params.index "alertbar" }}
     	{{ if .Site.Params.index.alertbar }}
             {{- partial "_shared/alertbar.html" . -}}

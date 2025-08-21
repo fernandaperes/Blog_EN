@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="pt-br"><head>
   
   <meta name="referrer" content="unsafe-url">
   
@@ -16,19 +16,19 @@
 	
 	<link rel="icon" href="/images/favicon.ico">
 	
-	<title>Como interpretar o intervalo de confiança? | Fernanda Peres | Data Analysis</title>
+	<title>Como interpretar o intervalo de confiança? | Fernanda Peres | Estatística aplicada</title>
 	
 	
 
 	<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://en.fernandafperes.com.br/blog/intervalo-de-confianca/cover.png"/>
+<meta name="twitter:image" content="https://fernandafperes.com.br/blog/intervalo-de-confianca/cover.png"/>
 <meta name="twitter:title" content="Como interpretar o intervalo de confiança?"/>
 <meta name="twitter:description" content="O que significa o intervalo de confiança? Qual a sua relação com a margem de erro? E com o nível de significância? Neste post discutimos, com exemplos, esse conceito tão importante da estatística inferencial."/>
 
 	<meta property="og:title" content="Como interpretar o intervalo de confiança?" />
 <meta property="og:description" content="O que significa o intervalo de confiança? Qual a sua relação com a margem de erro? E com o nível de significância? Neste post discutimos, com exemplos, esse conceito tão importante da estatística inferencial." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://en.fernandafperes.com.br/blog/intervalo-de-confianca/" /><meta property="og:image" content="https://en.fernandafperes.com.br/blog/intervalo-de-confianca/cover.png"/><meta property="article:section" content="blog" />
+<meta property="og:url" content="https://fernandafperes.com.br/blog/intervalo-de-confianca/" /><meta property="og:image" content="https://fernandafperes.com.br/blog/intervalo-de-confianca/cover.png"/><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2021-06-08T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-06-08T00:00:00+00:00" />
 
@@ -39,10 +39,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
 
 	
-	<link rel="stylesheet" href="https://en.fernandafperes.com.br/css/medium.1ebce77c5767f4abffa5a3ab1cc4f3633495278c5d2b1534905ec6f2dd9465a2.css" integrity="sha256-HrznfFdn9Kv/paOrHMTzYzSVJ4xdKxU0kF7G8t2UZaI=">
+	<link rel="stylesheet" href="https://fernandafperes.com.br/css/medium.235bfdfe2bfd01297b4cda38eb19ce8f2762f8b14fac32a1df94141126b67cf2.css" integrity="sha256-I1v9/iv9ASl7TNo46xnOjydi&#43;LFPrDKh35QUESa2fPI=">
 
 	
-	<link rel="stylesheet" href="https://en.fernandafperes.com.br/css/additional.77122c28d54fb4398498d8eb647093daef5593de649d76a15162813005e4642f.css" integrity="sha256-dxIsKNVPtDmEmNjrZHCT2u9Vk95knXahUWKBMAXkZC8=">
+	<link rel="stylesheet" href="https://fernandafperes.com.br/css/additional.77122c28d54fb4398498d8eb647093daef5593de649d76a15162813005e4642f.css" integrity="sha256-dxIsKNVPtDmEmNjrZHCT2u9Vk95knXahUWKBMAXkZC8=">
 
 	
 	
@@ -57,7 +57,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white mediumnavigation nav-down">
 
 <div class = "logo">
-<a href="https://en.fernandafperes.com.br">
+<a href="https://fernandafperes.com.br">
 <img class="navbar" src="/themes/mediumish-gohugo-theme/layouts/partials/_shared/head_files/logo.png" alt="" align="center" width="500px"/>
 </a>
 </div>
@@ -79,11 +79,11 @@
             <ul class="navbar-nav ml-auto">
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="https://fernandafperes.com.br">PT-BR</a>
+                    <a class="nav-link" href="https://en.fernandafperes.com.br">ENGLISH</a>
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="/">HOME</a>
+                    <a class="nav-link" href="/">PÁGINA INICIAL</a>
                 </li>
                 
                 <li class="nav-item ">
@@ -91,7 +91,15 @@
                 </li>
                 
                 <li class="nav-item ">
-                    <a class="nav-link" href="/about">ABOUT</a>
+                    <a class="nav-link" href="/sobre">SOBRE</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="/servicos">SERVIÇOS</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://curso.fernandafperes.com.br">CURSO</a>
                 </li>
                 
             </ul>
@@ -140,37 +148,41 @@
                 <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
     <br>
     
-    <p>Like</p>
+
+
+
+    <p>Curtir</p>
     <ul>
         <center>
-        <applause-button color="#11807f" style="width: 35px; height: 35px;" multiclap="true" url="https://en.fernandafperes.com.br/blog/intervalo-de-confianca/"/>
+          <meta name="referrer" content="strict-origin">
+          <applause-button color="#11807f" style="width: 35px; height: 35px;" multiclap="true" api="https://applause.chabouis.fr" url="https://fernandafperes.com.br/blog/intervalo-de-confianca/"/>
         </center>
     </ul><br>
     
     
-    <p>Share</p>
+    <p>Compartilhar</p>
     <ul>
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=Como%20interpretar%20o%20intervalo%20de%20confian%c3%a7a%3f&url=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fintervalo-de-confianca%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=Como%20interpretar%20o%20intervalo%20de%20confian%c3%a7a%3f&url=https%3a%2f%2ffernandafperes.com.br%2fblog%2fintervalo-de-confianca%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
         <i class="fab fa-twitter"></i>
         </a>
         </li>
 
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fintervalo-de-confianca%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2ffernandafperes.com.br%2fblog%2fintervalo-de-confianca%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
         <i class="fab fa-facebook-f"></i>
         </a>
         </li>
 
         <li class="ml-1 mr-1">
-        <a target="_blank" href="whatsapp://send?text=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fintervalo-de-confianca%2f" onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="whatsapp://send?text=https%3a%2f%2ffernandafperes.com.br%2fblog%2fintervalo-de-confianca%2f" onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=435');return false;">
         <i class="fab fa-whatsapp"></i>
         </a>
         </li>
         
         
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fintervalo-de-confianca%2f&title=&summary=&source=" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2ffernandafperes.com.br%2fblog%2fintervalo-de-confianca%2f&title=&summary=&source=" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=435');return false;">
         <i class="fab fa-linkedin"></i>
         </a>
         </li>
@@ -214,10 +226,10 @@
 
 
 <center><span class="author-description">
-    June 8, 2021
+    8 jun., 2021
 
-    <i class="far fa-clock clock"></i>
-    8 min reading
+
+    
     </span>
 </center><br>
 
@@ -238,7 +250,7 @@
                     
                     
                     
-                        <center><img class="featured-image img-fluid" src="https://en.fernandafperes.com.br/blog/intervalo-de-confianca/cover.png" alt="thumbnail for this post" style="width:350px;"></center>
+                        <center><img class="featured-image img-fluid" src="https://fernandafperes.com.br/blog/intervalo-de-confianca/cover.png" alt="thumbnail for this post"></center>
                     
                     
 
@@ -341,7 +353,13 @@ Observe as simulações abaixo, as quais consideraram uma proporção na popula�
 <p><img src="img6.png" width="350px" style="display: block; margin: auto;" /></p>
 <p>Para isso fazer mais sentido, observe o gráfico abaixo, que já discutimos nesse post. Nesse gráfico, 95% das amostras contêm o parâmetro populacional no seu IC. Se quiséssemos que 99% das amostras o contivessem, precisaríamos ampliar o intervalo – em outras palavras, precisaríamos aumentar a margem de erro.</p>
 <p><img src="img4.png" width="450px" style="display: block; margin: auto;" /></p>
+<div id="como-citar-esse-post-nas-normas-da-abnt" class="section level4">
+<h4>Como citar esse post, nas normas da ABNT</h4>
+<blockquote>
+<p>PERES, Fernanda F. <strong>Como interpretar o intervalo de confiança?</strong>. Blog Fernanda Peres, São Paulo, 08 jun. 2021. Disponível em: <a href="https://fernandafperes.com.br/blog/intervalo-de-confianca/" class="uri">https://fernandafperes.com.br/blog/intervalo-de-confianca/</a>.</p>
+</blockquote>
 <p><br><br><br></p>
+</div>
 </div>
 
                     </div>
@@ -350,8 +368,10 @@ Observe as simulações abaixo, as quais consideraram uma proporção na popula�
                     
                     <div class="row PageNavigation d-flex justify-content-between font-weight-bold after-post">
                     
-                        <a class="d-block col-md-6" href="https://en.fernandafperes.com.br/blog/boxplot-interpretation/"> &laquo; How to construct and interpret a boxplot</a>
+                        <a class="d-block col-md-6" href="https://fernandafperes.com.br/blog/valor-de-p-calculo/"> &laquo; Valor de p, nível de significância e testes uni vs. bicaudais</a>
                     
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://fernandafperes.com.br/blog/doutora-toma-cha/">O que é e como interpretar o valor de p? &raquo;</a>
                     
                     <div class="clearfix"></div>
                     </div>
@@ -369,7 +389,12 @@ Observe as simulações abaixo, as quais consideraram uma proporção na popula�
       <div id="comments" class="row justify-content-center mb-5">
         <div class="col-md-8">    
        
-
+  <div class="button"> 
+<center>
+  <a href="https://fernandafperes.com.br/servicos" class="button">Gostou do post? Se quiser me contratar para te ajudar com a análise dos seus dados, saiba mais sobre os serviços que eu ofereço clicando aqui!</a>
+</center>
+  </div>
+  <br><br>
   
             <div id="disqus_thread"></div>
 <script type="application/javascript">
@@ -434,6 +459,8 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
     
 <br><br>
 Adaptado de <a target="_blank" rel="noopener" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+<br>
+FERNANDA F PERES LTDA - CNPJ 40.903.870/0001-95
             </div>
         </div>
     </div>
@@ -460,7 +487,7 @@ hljs.initHighlightingOnLoad();
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
-<script src="https://en.fernandafperes.com.br/js/mediumish.84218587c174fd40bce82544b98851670f0b124a7324b349c54a4065e2b32ffc.js" integrity="sha256-hCGFh8F0/UC86CVEuYhRZw8LEkpzJLNJxUpAZeKzL/w="></script>
+<script src="https://fernandafperes.com.br/js/mediumish.84218587c174fd40bce82544b98851670f0b124a7324b349c54a4065e2b32ffc.js" integrity="sha256-hCGFh8F0/UC86CVEuYhRZw8LEkpzJLNJxUpAZeKzL/w="></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBDS4LT6P0"></script>
 <script>

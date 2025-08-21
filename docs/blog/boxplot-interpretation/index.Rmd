@@ -1,7 +1,7 @@
 ---
-title: "How to construct and interpret a boxplot"
+title: "How to interpret a boxplot"
 author: Fernanda Fiel Peres
-date: '2022-03-29'
+date: '2023-09-29'
 slug: [boxplot-interpretation]
 categories: []
 tags: ['dataviz', 'ggplot2']
@@ -83,7 +83,7 @@ knitr::include_graphics("g5.png")
   
 Despite the logic being always the same, the calculation of quartiles may vary. For example, some calculations include the median, others don’t. Therefore, the quartile values calculated by different statistical softwares may differ. To better understand these differences, I suggest the article by @hyndman1996sample.
   
-The second quartile (i.e. the median) will be the line divides the boxplot box in two parts. The first quartile (Q1) will be the bottom of the box and the third quartile (Q3) will be the top. The figure below shows a boxplot constructed with the values from the dataset above. Note that the bottom of the box corresponds to 25, the top to 32 and the line in the center to 28.5.  
+The second quartile (i.e. the median) will be the line divides the boxplot box in two parts. The first quartile (Q1) will be the bottom of the box and the third quartile (Q3) will be the top. The figure below shows a boxplot created with the values from the dataset above. Note that the bottom of the box corresponds to 25, the top to 32 and the line in the center to 28.5.  
   
 We can also notice that the height of the box corresponds to the difference between the third and first quartiles (Q1 - Q3). This difference is called **interquartile range**, and commonly abbreviated as IQR. Note that in the boxplot below the IQR, that is, the height of the box, is equal to 32 - 25 = 7.  
   
@@ -252,7 +252,7 @@ You should also notice that boxplot is not based on the mean or on measures of d
 Of course, it is not a graph for all audiences. It took me lots of paragraphs to explain it. The boxplot is an excellent plot for academic publications or for data exploring by data scientists/ analysts. But, it is not well-suited for scientific communication or news articles.  
   
   
-### How to construct a boxplot?  
+### How to create a boxplot?  
   
 It is possible to create a boxplot in Excel. You can find the step-by-step on [YouTube videos](https://youtu.be/39lsUsJsc2c?si=VQtLH8XjcO6mU8-H).  
   

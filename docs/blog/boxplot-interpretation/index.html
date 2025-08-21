@@ -16,21 +16,21 @@
 	
 	<link rel="icon" href="/images/favicon.ico">
 	
-	<title>How to construct and interpret a boxplot | Fernanda Peres | Data Analysis</title>
+	<title>How to interpret a boxplot | Fernanda Peres | Data Analysis</title>
 	
 	
 
 	<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://en.fernandafperes.com.br/blog/boxplot-interpretation/cover.png"/>
-<meta name="twitter:title" content="How to construct and interpret a boxplot"/>
+<meta name="twitter:title" content="How to interpret a boxplot"/>
 <meta name="twitter:description" content="If you are in academia or work with data analysis, you have probably encountered a somewhat peculiar-looking plot such as the above (based on the research article of Schenk &amp; Steppan (2014))."/>
 
-	<meta property="og:title" content="How to construct and interpret a boxplot" />
+	<meta property="og:title" content="How to interpret a boxplot" />
 <meta property="og:description" content="If you are in academia or work with data analysis, you have probably encountered a somewhat peculiar-looking plot such as the above (based on the research article of Schenk &amp; Steppan (2014))." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://en.fernandafperes.com.br/blog/boxplot-interpretation/" /><meta property="og:image" content="https://en.fernandafperes.com.br/blog/boxplot-interpretation/cover.png"/><meta property="article:section" content="blog" />
-<meta property="article:published_time" content="2022-03-29T00:00:00+00:00" />
-<meta property="article:modified_time" content="2022-03-29T00:00:00+00:00" />
+<meta property="article:published_time" content="2023-09-29T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-09-29T00:00:00+00:00" />
 
 
 
@@ -39,7 +39,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
 
 	
-	<link rel="stylesheet" href="https://en.fernandafperes.com.br/css/medium.1ebce77c5767f4abffa5a3ab1cc4f3633495278c5d2b1534905ec6f2dd9465a2.css" integrity="sha256-HrznfFdn9Kv/paOrHMTzYzSVJ4xdKxU0kF7G8t2UZaI=">
+	<link rel="stylesheet" href="https://en.fernandafperes.com.br/css/medium.b5be3dbfa4ca81580e14656577d04ae06f90c1aa65488d7d9b0317528063bf60.css" integrity="sha256-tb49v6TKgVgOFGVld9BK4G&#43;QwaplSI19mwMXUoBjv2A=">
 
 	
 	<link rel="stylesheet" href="https://en.fernandafperes.com.br/css/additional.77122c28d54fb4398498d8eb647093daef5593de649d76a15162813005e4642f.css" integrity="sha256-dxIsKNVPtDmEmNjrZHCT2u9Vk95knXahUWKBMAXkZC8=">
@@ -57,7 +57,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white mediumnavigation nav-down">
 
 <div class = "logo">
-<a href="https://en.fernandafperes.com.br">
+<a href="https://fernandafperes.com.br">
 <img class="navbar" src="/themes/mediumish-gohugo-theme/layouts/partials/_shared/head_files/logo.png" alt="" align="center" width="500px"/>
 </a>
 </div>
@@ -140,18 +140,22 @@
                 <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
     <br>
     
-    <p>Like</p>
+
+
+
+    <p>Curtir</p>
     <ul>
         <center>
-        <applause-button color="#11807f" style="width: 35px; height: 35px;" multiclap="true" url="https://en.fernandafperes.com.br/blog/boxplot-interpretation/"/>
+          <meta name="referrer" content="strict-origin">
+          <applause-button color="#11807f" style="width: 35px; height: 35px;" multiclap="true" api="https://applause.chabouis.fr" url="https://en.fernandafperes.com.br/blog/boxplot-interpretation/"/>
         </center>
     </ul><br>
     
     
-    <p>Share</p>
+    <p>Compartilhar</p>
     <ul>
         <li class="ml-1 mr-1">
-        <a target="_blank" href="https://twitter.com/intent/tweet?text=How%20to%20construct%20and%20interpret%20a%20boxplot&url=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fboxplot-interpretation%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=How%20to%20interpret%20a%20boxplot&url=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fboxplot-interpretation%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
         <i class="fab fa-twitter"></i>
         </a>
         </li>
@@ -208,16 +212,16 @@
                         
 
 
-<h1 class="posttitle">How to construct and interpret a boxplot</h1>
+<h1 class="posttitle">How to interpret a boxplot</h1>
 
 </div>
 
 
 <center><span class="author-description">
-    March 29, 2022
+    29 Sep, 2023
 
-    <i class="far fa-clock clock"></i>
-    8 min reading
+
+    
     </span>
 </center><br>
 
@@ -242,7 +246,7 @@
                     
                     
                     
-                        <center><img class="featured-image img-fluid" src="https://en.fernandafperes.com.br/blog/boxplot-interpretation/cover.png" alt="thumbnail for this post" style="width:350px;"></center>
+                        <center><img class="featured-image img-fluid" src="https://en.fernandafperes.com.br/blog/boxplot-interpretation/cover.png" alt="thumbnail for this post"></center>
                     
                     
 
@@ -271,7 +275,7 @@
 <p>The reasoning behind quartiles is similar to the median one. But, instead of dividing the dataset in two equal parts, the quartiles divide it in four equal parts (hence name quartiles), each containing 25% (one quarter) of the data. See that in the example below. Note that quartile 2 is equivalent to the median.</p>
 <p><img src="g5.png" width="470px" style="display: block; margin: auto;" /></p>
 <p>Despite the logic being always the same, the calculation of quartiles may vary. For example, some calculations include the median, others don’t. Therefore, the quartile values calculated by different statistical softwares may differ. To better understand these differences, I suggest the article by <span class="citation">Hyndman &amp; Fan (<a href="#ref-hyndman1996sample">1996</a>)</span>.</p>
-<p>The second quartile (i.e. the median) will be the line divides the boxplot box in two parts. The first quartile (Q1) will be the bottom of the box and the third quartile (Q3) will be the top. The figure below shows a boxplot constructed with the values from the dataset above. Note that the bottom of the box corresponds to 25, the top to 32 and the line in the center to 28.5.</p>
+<p>The second quartile (i.e. the median) will be the line divides the boxplot box in two parts. The first quartile (Q1) will be the bottom of the box and the third quartile (Q3) will be the top. The figure below shows a boxplot created with the values from the dataset above. Note that the bottom of the box corresponds to 25, the top to 32 and the line in the center to 28.5.</p>
 <p>We can also notice that the height of the box corresponds to the difference between the third and first quartiles (Q1 - Q3). This difference is called <strong>interquartile range</strong>, and commonly abbreviated as IQR. Note that in the boxplot below the IQR, that is, the height of the box, is equal to 32 - 25 = 7.</p>
 <p><img src="g6.png" width="200px" style="display: block; margin: auto;" /></p>
 </div>
@@ -343,8 +347,8 @@ Figura 2: Boxplot based on the research article of <span class="citation">Schenk
 <p>You should also notice that boxplot is not based on the mean or on measures of dispersion related to the mean (e.g. variance and standard deviation). Therefore, it is an excellent plot for distributions that <strong>are not well represented by the mean</strong>, making it great for non-normal distributions.</p>
 <p>Of course, it is not a graph for all audiences. It took me lots of paragraphs to explain it. The boxplot is an excellent plot for academic publications or for data exploring by data scientists/ analysts. But, it is not well-suited for scientific communication or news articles.</p>
 </div>
-<div id="how-to-construct-a-boxplot" class="section level3">
-<h3>How to construct a boxplot?</h3>
+<div id="how-to-create-a-boxplot" class="section level3">
+<h3>How to create a boxplot?</h3>
 <p>It is possible to create a boxplot in Excel. You can find the step-by-step on <a href="https://youtu.be/39lsUsJsc2c?si=VQtLH8XjcO6mU8-H">YouTube videos</a>.</p>
 <p>If you are a fan of R programming, my suggestion is to create the boxplot using the <code>ggplot2</code> package. The details of the grammar of graphs, used by <code>ggplot2</code>, are beyond the scope of this post. But, with the code below you will be able to create a simple boxplot. Using a data frame called <code>data</code> containing the groups in one column (Group) and the number of pages in another (Pages):</p>
 <pre class="r"><code>ggplot(data, aes(x = Group, y = Pages)) +
@@ -357,7 +361,7 @@ Figura 2: Boxplot based on the research article of <span class="citation">Schenk
 </div>
 <div id="references" class="section level3 unnumbered">
 <h3>References:</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-hyndman1996sample" class="csl-entry">
 Hyndman, R. J., &amp; Fan, Y. (1996). Sample quantiles in statistical packages. <em>The American Statistician</em>, <em>50</em>(4), 361–365.
 </div>
@@ -372,6 +376,8 @@ Schenk, J. J., &amp; Steppan, S. J. (2014). Too long to read: Assessing the moti
 <br><br><br>
                     
                     <div class="row PageNavigation d-flex justify-content-between font-weight-bold after-post">
+                    
+                        <a class="d-block col-md-6" href="https://en.fernandafperes.com.br/blog/phd-tastes-tea/"> &laquo; How to properly interpret p-value?</a>
                     
                     
                     <div class="clearfix"></div>
@@ -390,30 +396,33 @@ Schenk, J. J., &amp; Steppan, S. J. (2014). Too long to read: Assessing the moti
       <div id="comments" class="row justify-content-center mb-5">
         <div class="col-md-8">    
        
-
+  <div class="button"> 
+<center>
+  <a href="https://fernandafperes.com.br/servicos" class="button">Gostou do post? Se quiser me contratar para te ajudar com a análise dos seus dados, saiba mais sobre os serviços que eu ofereço clicando aqui!</a>
+</center>
+  </div>
+  <br><br>
   
-            
-<section id="comments">
-  <div id="disqus_thread"></div>
-  <script>
-  
-  (function() {
-   var inIFrame = function() {
-      var iframe = true;
-      try { iframe = window.self !== window.top; } catch (e) {}
-      return iframe;
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
     };
-    if (inIFrame()) return;
-    var d = document, s = d.createElement('script');
-    s.src = '//fernandafperes.disqus.com/embed.js'; s.async = true;
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
-
-            
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "fernandafperes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
         </div>
     </div>
 </div>
@@ -457,6 +466,8 @@ src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
     
 <br><br>
 Adaptado de <a target="_blank" rel="noopener" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+<br>
+FERNANDA F PERES LTDA - CNPJ 40.903.870/0001-95
             </div>
         </div>
     </div>

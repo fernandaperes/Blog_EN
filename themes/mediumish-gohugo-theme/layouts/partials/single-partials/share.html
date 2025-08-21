@@ -1,15 +1,19 @@
 <div class="share sticky-top sticky-top-offset">
     <br>
     
-    <p>Like</p>
+
+
+
+    <p>Curtir</p>
     <ul>
         <center>
-        <applause-button color="#11807f" style="width: 35px; height: 35px;" multiclap="true" url="{{ .Permalink }}"/>
+          <meta name="referrer" content="strict-origin">
+          <applause-button color="#11807f" style="width: 35px; height: 35px;" multiclap="true" api="https://applause.chabouis.fr" url="{{ .Permalink }}"/>
         </center>
     </ul><br>
     
     
-    <p>Share</p>
+    <p>Compartilhar</p>
     <ul>
         <li class="ml-1 mr-1">
         <a target="_blank" href="https://twitter.com/intent/tweet?text={{ .Title }}&url={{ .Permalink }}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">

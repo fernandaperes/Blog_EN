@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  
+  <meta name="referrer" content="unsafe-url">
+  
+  <link rel="stylesheet" href="/css/applause-button.css" />
+  <script src="/js/applause-button.js"></script>
+  
+  <link href="/css/purebasic.css" rel="stylesheet"> 
+  
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="generator" content="Hugo 0.96.0" />
+	
+	<link rel="icon" href="/images/favicon.ico">
+	
+	<title>How to properly interpret p-value? | Fernanda Peres | Data Analysis</title>
+	
+	
+
+	<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://en.fernandafperes.com.br/blog/phd-tastes-tea/cover.jpg"/>
+<meta name="twitter:title" content="How to properly interpret p-value?"/>
+<meta name="twitter:description" content="Understanding p-value, hypothesis testing and significance level with the experiment &ldquo;lady tasting tea&rdquo;."/>
+
+	<meta property="og:title" content="How to properly interpret p-value?" />
+<meta property="og:description" content="Understanding p-value, hypothesis testing and significance level with the experiment &ldquo;lady tasting tea&rdquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://en.fernandafperes.com.br/blog/phd-tastes-tea/" /><meta property="og:image" content="https://en.fernandafperes.com.br/blog/phd-tastes-tea/cover.jpg"/><meta property="article:section" content="blog" />
+<meta property="article:published_time" content="2023-11-24T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-11-24T00:00:00+00:00" />
+
+
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
+
+	
+	<link rel="stylesheet" href="https://en.fernandafperes.com.br/css/medium.b5be3dbfa4ca81580e14656577d04ae06f90c1aa65488d7d9b0317528063bf60.css" integrity="sha256-tb49v6TKgVgOFGVld9BK4G&#43;QwaplSI19mwMXUoBjv2A=">
+
+	
+	<link rel="stylesheet" href="https://en.fernandafperes.com.br/css/additional.77122c28d54fb4398498d8eb647093daef5593de649d76a15162813005e4642f.css" integrity="sha256-dxIsKNVPtDmEmNjrZHCT2u9Vk95knXahUWKBMAXkZC8=">
+
+	
+	
+	<link rel="stylesheet" href="/css/purebasic.css" integrity="" crossorigin="anonymous" media="screen">
+	<link rel="stylesheet" href="/css/applause-button.css" integrity="" crossorigin="anonymous" media="screen">
+
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white mediumnavigation nav-down">
+
+<div class = "logo">
+<a href="https://fernandafperes.com.br">
+<img class="navbar" src="/themes/mediumish-gohugo-theme/layouts/partials/_shared/head_files/logo.png" alt="" align="center" width="500px"/>
+</a>
+</div>
+
+</nav>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white mediumnavigation nav-down">
+
+<div class = "social">
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMediumish" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <div class="collapse navbar-collapse" id="navbarMediumish">
+            
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="https://fernandafperes.com.br">PT-BR</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">HOME</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="/blog">BLOG</a>
+                </li>
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="/about">ABOUT</a>
+                </li>
+                
+            </ul>
+        </div>
+        
+    </div>
+
+
+<div class = "menu">
+
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandaperes"><i class="fab fa-github social-icon" aria-hidden="true"></i></a>
+    
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/fernandafielperes"><i class="fab fa-linkedin social-icon" aria-hidden="true"></i></a>
+    
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/estatisticaaplicada"><i class="fab fa-instagram social-icon" aria-hidden="true"></i></a>
+    
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/c/FernandaPeres"><i class="fab fa-youtube social-icon" aria-hidden="true"></i></a>
+    
+    <font size="5px"><a href="mailto:contato@fernandafperes.com.br?subject=Consultoria" style="padding-left:8px;"><i class="fa fa-solid fa-envelope" aria-hidden="true"></i></a></font>
+
+
+</div>
+
+
+</nav>
+
+
+        <div class="site-content">   
+            <div class="container">
+<div class="mainheading">
+    <h1 class="sitetitle"></h1>
+    <p class="lead">
+         
+    </p>
+</div>
+<div class="main-content">
+        
+        <div class="container">
+            <div class="row">
+                
+                
+                <div class="col-md-2 pl-0"><div class="share sticky-top sticky-top-offset">
+    <br>
+    
+
+
+
+    <p>Curtir</p>
+    <ul>
+        <center>
+          <meta name="referrer" content="strict-origin">
+          <applause-button color="#11807f" style="width: 35px; height: 35px;" multiclap="true" api="https://applause.chabouis.fr" url="https://en.fernandafperes.com.br/blog/phd-tastes-tea/"/>
+        </center>
+    </ul><br>
+    
+    
+    <p>Compartilhar</p>
+    <ul>
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://twitter.com/intent/tweet?text=How%20to%20properly%20interpret%20p-value%3f&url=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fphd-tastes-tea%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=435');return false;">
+        <i class="fab fa-twitter"></i>
+        </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://facebook.com/sharer.php?u=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fphd-tastes-tea%2f" onclick="window.open(this.href, 'facebook-share', 'width=550,height=435');return false;">
+        <i class="fab fa-facebook-f"></i>
+        </a>
+        </li>
+
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="whatsapp://send?text=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fphd-tastes-tea%2f" onclick="window.open(this.href, 'whatsapp-share', 'width=550,height=435');return false;">
+        <i class="fab fa-whatsapp"></i>
+        </a>
+        </li>
+        
+        
+        <li class="ml-1 mr-1">
+        <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fen.fernandafperes.com.br%2fblog%2fphd-tastes-tea%2f&title=&summary=&source=" onclick="window.open(this.href, 'linkedin-share', 'width=550,height=435');return false;">
+        <i class="fab fa-linkedin"></i>
+        </a>
+        </li>
+        
+    </ul>
+
+    
+        <div class="sep">
+        </div>
+        <ul>
+            <li>
+            <a  class="small smoothscroll" href="#disqus_thread"></a>
+            </li>
+        </ul>
+    
+</div>
+</div>
+                    
+                
+                <div class="col-md-9 flex-first flex-md-unordered">
+                    <div class="mainheading">
+                        
+                        
+                        
+                        
+                        <div class="row post-top-meta">
+                            <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0 md-nopad-right">
+                            </div>
+                            <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left md-nopad-left">
+                            </div>
+                        </div>
+                        
+                        
+                        
+                        
+
+
+<h1 class="posttitle">How to properly interpret p-value?</h1>
+
+</div>
+
+
+<center><span class="author-description">
+    24 Nov, 2023
+
+
+    
+    </span>
+</center><br>
+
+
+                    
+                    <div class="after-post-tags">
+                        <ul class="tags"><center>
+                        
+                        <li>
+                        <a href="/tags/statistical-theory">statistical theory</a>
+                        </li>
+                        
+                        <li>
+                        <a href="/tags/p-value">p-value</a>
+                        </li>
+                        
+                        </center></ul>
+                    </div>
+                    
+                    
+
+                    
+                    
+                    
+                        <center><img class="featured-image img-fluid" src="https://en.fernandafperes.com.br/blog/phd-tastes-tea/cover.jpg" alt="thumbnail for this post"></center>
+                    
+                    
+
+
+                    
+                    <div class="article-post">
+                        
+
+
+<center>
+<font size = '1'>
+Image by <a href="http://www.freepik.com">Freepik</a>
+</font>
+</center>
+<p><br><br></p>
+<div id="phd-tastes-tea" class="section level2">
+<h2>PhD tastes tea</h2>
+<div id="how-to-properly-interpret-the-famous-and-controversial-p-value" class="section level3">
+<h3>How to properly interpret the famous and controversial p-value?</h3>
+<p>In my opinion, the concepts of p-value and significance level are among the most confusing and challenging to explain when it comes to statistics. I use statistical tools to analyze my experimental data since 2010. But it wasn’t until seven years later, when attending a conference of Brazilian Society of Neuroscience and Behavior, that I truly grasped these two concepts.</p>
+<p>The purpose of this blog post is to elucidate these concepts through the history of the creation of the hypothesis test, named “Lady tasting tea”.</p>
+</div>
+<div id="the-problem" class="section level3">
+<h3>The problem</h3>
+<p>Legend - and Ronald Fisher’s biography - say that, in one afternoon in the late 1920s, three research workers at the Rothamsted Experimental Station took a break to have a nice cup of tea. The researchers were two men and a woman.</p>
+<img src="https://i.imgur.com/97E9BDk.png" width="450px" style="display: block; margin: auto;" />
+<center>
+<font size = '3'>Rothamsted Experimental Station in UK</font>
+</center>
+<p><br><br></p>
+<p>One of the men poured milk to the cup, added tea, stirred it, and offered the cup to his female co-worker. She politely declined, saying that she preferred when tea was added before milk. He argued that the order didn’t make a difference. She insisted, claiming that she could taste the difference and preferred it when the tea was added first.</p>
+<p><img src="https://i.imgur.com/cjyXhYj.png" width="150px" style="display: block; margin: auto;" /></p>
+<p>If the individuals in this story were different, it likely would have ended there. However, the man in question was Ronald Fisher, a statistician and geneticist who would later be knighted. The female researcher was Blanche Muriel Bristol, an algologist who had already obtained a MSc and a PhD. Unfortunately, much information about Dr. Muriel has been lost over time. However, it is known that a species of algae was named C. <em>muriella</em> in her honor, indicating that she made significant contributions to her field.</p>
+<p><img src="https://i.imgur.com/3GBT1P0.png" width="500px" style="display: block; margin: auto;" /></p>
+<p>Ronald Fisher, skeptical that Dr. Muriel could truly distinguish between a cup with tea added before milk and one with tea added after, proposed an experiment to put her claim to the test.</p>
+</div>
+<div id="the-hypothesis" class="section level3">
+<h3>The hypothesis</h3>
+<p>We can consider that the experiment allowed the comparison of two hypotheses:</p>
+<ul>
+<li>Hypothesis 1: Dr. Muriel, in reality, <strong>was not able to differentiate</strong> between the preparations;</li>
+<li>Hypothesis 2: Dr. Muriel, in reality, <strong>was able to differentiate</strong> between the preparations.</li>
+</ul>
+<p>Using the terminology commonly employed today and for the sake of clarity, let’s refer to the first hypothesis as the “Null Hypothesis (H<sub>0</sub>)” and the second hypothesis, which opposes H<sub>0</sub>, as the “Alternative Hypothesis (H<sub>1</sub>)”:</p>
+<p><img src="https://i.imgur.com/MWYUf74.png" width="450px" style="display: block; margin: auto;" /></p>
+</div>
+<div id="alright-but-how-to-test-it" class="section level3">
+<h3>Alright, but… How to test it?</h3>
+<p>Fisher could present Dr. Muriel with just one cup and ask her to identify whether the tea had been added before or after the milk. However, in this scenario, even if she couldn’t truly differentiate between the preparations, the probability of her guessing correctly would be 50%. The same probability would apply if Dr. Muriel were presented with two cups, knowing that one of each type of preparation was present.</p>
+<p><img src="https://i.imgur.com/XcJqd4E.png" width="150px" style="display: block; margin: auto;" /></p>
+<p>Fisher ended up proposing an experiment in which 8 cups would be presented to Dr. Muriel: 4 with tea added before milk and 4 with tea added after milk. The order of presentation of these cups would be truly random, determined by a coin flip, making it impossible to predict. In the end, Dr. Muriel – who was aware of how the experiment was designed – would have to identify which four cups belonged to the same type of preparation. Note that if she correctly identified these 4 cups, it would mean she had accurately determined the preparation method for all 8 cups.</p>
+<p><img src="https://i.imgur.com/lho5f92.png" width="600px" style="display: block; margin: auto;" /></p>
+<p>With this experimental design, the probability of Dr. Muriel correctly selecting the four cups - without being able to differentate them - would be 1 in 70, which corresponds to
+<span class="math display">\[\frac{1}{70} \times 100 = 1.43\%\]</span></p>
+<blockquote>
+<p>Understanding how this calculation was done is entirely unnecessary for grasping the concepts of p-value and significance level, okay? But if you’re curious, follow my reasoning below. Feel free to skip this section if you prefer to continue reading.<br />
+Where does the 70 in the denominator of the fraction come from? It corresponds to the possibilities of selecting a set of 4 cups out of the 8. To calculate the number of possibilities, we should use the combination formula (yes, the one you learned in high school):<br />
+<span class="math display">\[C_{(8, 4)} = \binom{8}{4} = \frac{8!}{4! \times 4!} = \frac{8 \times 7 \times 6 \times 5}{4 \times 3 \times 2 \times 1} = 70\]</span>
+Among all these combinations, there is only one that corresponds to getting all the cups right. Hence, the probability of a person correctly selecting the 4 cups with the same preparation is 1 in 70.</p>
+</blockquote>
+<p>Now, here comes the big question: if Dr. Muriel got all the cups right, would you believe that she has the ability to differentiate between the preparations? Consider that the probability of this happening without her having this ability is only 1.43%. I would believe her, and I imagine you would too.</p>
+<p>But even if she can differentiate between the preparations, it’s possible that she could make a mistake with one of the 4 selected cups, right? One might not have been stirred properly, or it could have a different tea to milk ratio…</p>
+<p><img src="https://i.imgur.com/BR8F7hD.png" width="600px" style="display: block; margin: auto;" /></p>
+<p>And in this scenario, would you believe her? Let’s calculate the probabilities again. The probability of her getting at least 3 cups right (meaning, getting 3 or 4 cups right) is 17 out of 70, which corresponds to:<br />
+<span class="math display">\[\frac{17}{70} = 24,29%\]</span></p>
+<blockquote>
+<p>Again, if you’re interested in how this calculation was done, follow the reasoning below. If this doesn’t interest you, feel free to skip this section.
+We already know that there are 70 possible combinations of 4 cups out of 8. Among these, only one corresponds to getting all cups right. Now let’s calculate how many of the 70 possibilities correspond to getting 3 cups right out of the 4 selected. To do this, we need to compute a combination of 3 out of 4 (selecting 3 cups out of the 4 correct ones) and a combination of 1 out of 4 (selecting 1 cup out of the 4 incorrect ones). Since we want to select 3 correct cups <strong>and</strong> 1 incorrect cup, we need to multiply these results:
+<span class="math display">\[C_{(4, 3)} \times C_{(4, 1)}\]</span>
+<span class="math display">\[\binom{4}{3} \times \binom{4}{1}\]</span>
+<span class="math display">\[\frac{4!}{3! \times 1!} \times \frac{4!}{1! \times 3!}\]</span>
+<span class="math display">\[4 \times 4 = 16\]</span>
+Therefore, the probability of getting at least 3 cups right is 17 (16 + 1) out of 70.</p>
+</blockquote>
+<p>The probability of Dr. Muriel getting at least 3 cups right out of the selected ones (meaning at least 6 cups in total), without being able to differentiate between the preparations, is 24.29%. Knowing that, would you believe in her ability to differentiate it if she got six cups right? I suppose your answer is: “no!”. Mine is too.</p>
+<p>In this story, we used the concepts of p-value and significance level without explicitly naming them. Let’s define them now, relating them to the story.</p>
+</div>
+<div id="p-value" class="section level3">
+<h3>P-value</h3>
+<p>The p-value is “the probability of obtaining results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct”<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>.</p>
+<p>This definition might sound confusing, but it makes more sense when we interpret it in the context of the story. In the tea case, our null hypothesis was that Dr. Muriel, in reality, was <strong>not able</strong> to differentiate between the tea preparations. So, we calculated the probability of her getting all 8 cups right, considering the null hypothesis to be true. The calculated probability (1.43%) corresponds to our p-value. Similarly, we calculated the probability of another result, her getting <em>at least</em> 6 cups right, again considering that the null hypothesis was true. We then obtained another p-value: 24.29%.</p>
+</div>
+<div id="how-about-the-significance-level" class="section level3">
+<h3>How about the significance level?</h3>
+<p>The significance level is the <em>cut-off point</em> we establish for rejecting the null hypothesis.</p>
+<p>I asked you if you would believe in Dr. Muriel’s ability to differentiate the preparations if she got all 8 cups right. Knowing that the probability of her getting it right without being able to differentiate between the preparations was 1.43%, you likely answered yes. However, when I asked if you would believe her if she got 6 cups right – knowing that the probability of this result was 24.29% – you chose not to believe her.</p>
+<p>Notice that to give these answers you set a cut-off point between 1.43% and 24.29%, considering that 1.43% was a low enough probability to convince you to reject the null hypothesis, but 24.29% was not. This cut-off point is your significance level.</p>
+<p>In most fields, the most accepted a significance level (<span class="math inline">\(\alpha\)</span>) is 5%. You can also be more conservative and set a significance level of 1%, for example. But in this was the case, you would need to design an experiment with more cups. With 8 cups, even if Dr. Muriel got all of them right, we wouldn’t have enough evidence to reject the null hypothesis with a <span class="math inline">\(\alpha\)</span> of 1%.</p>
+</div>
+<div id="okay-but-did-she-get-it-right" class="section level3">
+<h3>Okay, but… Did she get it right?</h3>
+<p>Ronald Fisher published this experimental design in his 1935 book “The design of experiments”, under the name that made it famous: “Lady tasting tea.” In the book, Fisher describes the experiment as hypothetical.</p>
+<p>However, there is evidence that this story actualy happened, and Dr. Muriel got all the cups right. There does seem to be a difference in the taste of tea, as tea is added hot to the preparation, while milk is added at room temperature. According to a statement from 2008 by the Royal Society of Chemists, there is more denaturation of milk proteins when it is added after tea, which changes the taste. Reports – unfortunately difficult to check – suggest that Dr. Muriel herself had explained to Fisher that there would be differences in protein denaturation.</p>
+<p>This story is also recounted in the famous book “The Lady Tasting Tea” by David Salsburg. However, David refers to the woman as “the wife of a university professor”. An unfortunate flaw for a book whose title is based on this episode. Dr. Muriel was a woman with a remarkable scientific career.</p>
+<p><br></p>
+<hr>
+</div>
+<div id="references" class="section level3">
+<h3>References:</h3>
+<ul>
+<li>Senn, S. (2012). Tea for three: of infusions and inferences and milk in first. Significance, 9(6), 30-33. <a href="https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2012.00620.x">Link</a></li>
+<li>Salsburg, D. (2001). The lady tasting tea: How statistics revolutionized science in the twentieth century. Macmillan.</li>
+</ul>
+<p><br><b><br></p>
+</div>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p>p-value: <a href="https://en.wikipedia.org/wiki/P-value" class="uri">https://en.wikipedia.org/wiki/P-value</a>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+                    </div>
+
+<br><br><br>
+                    
+                    <div class="row PageNavigation d-flex justify-content-between font-weight-bold after-post">
+                    
+                    
+                        <a class="d-block col-md-6 text-lg-right" href="https://en.fernandafperes.com.br/blog/boxplot-interpretation/">How to interpret a boxplot &raquo;</a>
+                    
+                    <div class="clearfix"></div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+<div class="container">
+  
+  <br><br><br>
+  
+      <div id="comments" class="row justify-content-center mb-5">
+        <div class="col-md-8">    
+       
+  <div class="button"> 
+<center>
+  <a href="https://fernandafperes.com.br/servicos" class="button">Gostou do post? Se quiser me contratar para te ajudar com a análise dos seus dados, saiba mais sobre os serviços que eu ofereço clicando aqui!</a>
+</center>
+  </div>
+  <br><br>
+  
+            <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "fernandafperes" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>               
+        </div>
+    </div>
+</div>
+
+    </div>
+
+
+            </div>
+<footer class="footer">
+
+<script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 text-center text-lg-left">
+                <img src="/themes/mediumish-gohugo-theme/layouts/partials/_shared/footer_files/logo-rodape.png" alt="" width="300px"/>
+            </div>
+
+<div class="col-md-6 col-sm-6 text-center text-lg-right">
+
+
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://github.com/fernandaperes"><i class="fab fa-github social-icon" aria-hidden="true"></i></a>
+    
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/in/fernandafielperes"><i class="fab fa-linkedin social-icon" aria-hidden="true"></i></a>
+    
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/estatisticaaplicada"><i class="fab fa-instagram social-icon" aria-hidden="true"></i></a>
+    
+    
+    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/c/FernandaPeres"><i class="fab fa-youtube social-icon" aria-hidden="true"> </i></a>
+    
+    <font size="5px"><a href="mailto:contato@fernandafperes.com.br?subject=Consultoria" style="padding-left:8px;"><i class="fa fa-solid fa-envelope" aria-hidden="true"></i></a></font>
+    
+    
+<br><br>
+Adaptado de <a target="_blank" rel="noopener" href="https://www.wowthemes.net">Mediumish Theme</a> by WowThemes.net
+<br>
+FERNANDA F PERES LTDA - CNPJ 40.903.870/0001-95
+            </div>
+        </div>
+    </div>
+    
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/r.min.js"></script>
+
+<script>
+hljs.configure({languages: []});
+hljs.initHighlightingOnLoad();
+</script>  
+
+</footer>
+
+
+
+        </div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+<script src="https://en.fernandafperes.com.br/js/mediumish.84218587c174fd40bce82544b98851670f0b124a7324b349c54a4065e2b32ffc.js" integrity="sha256-hCGFh8F0/UC86CVEuYhRZw8LEkpzJLNJxUpAZeKzL/w="></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBDS4LT6P0"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-ZBDS4LT6P0', { 'anonymize_ip': false });
+}
+</script>
+
+    </body>
+</html>

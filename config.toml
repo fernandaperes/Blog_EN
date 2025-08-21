@@ -71,3 +71,8 @@ Currently trying to get this blog running, still don't know what the blog will b
     identifier = "home"
     weight = 10
     url = "/"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
