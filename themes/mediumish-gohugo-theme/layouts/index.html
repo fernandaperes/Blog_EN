@@ -1,75 +1,68 @@
-{{ define "header"}}
+{{ define "header" }}
     {{- partial "_shared/navbar.html" . -}}
 {{ end }}
 
 {{ define "main" }}
+{{ $posts := where site.RegularPages "Section" "blog" }}
 
+<div class="home">
 
-
-    <div class="main-content">
-        <section class="recent-posts">
-            <div class="section-title2">
-                <h2><span>Latest blog posts</span></h2>
-            </div>
-            <div class="row listrecent">
-                {{- range ( where site.RegularPages "Section" "blog" | first 3 ) }}
-                    {{- partial "list-partials/postbox.html" . -}}
-                {{end}}
-                
-            </div>
-        </section>
-
+  <!-- ============ BLOCO 1: ABERTURA (texto + post mais recente) ============ -->
+  <section class="home-abertura">
+    <div>
+      <h1>Statistics for research, explained clearly.</h1>
+      <p class="home-lead">Articles and videos about hypothesis testing, data visualization and R programming, for people who work with research data.</p>
+      <a class="botao" href="/blog/">Read the blog</a>
+      <a class="botao botao-contorno" href="/about/">About me</a>
     </div>
-    
-    <center>
-      <a href="https://en.fernandafperes.com.br/blog" class="buttonhome">
-      Browse all blog posts
+
+    {{ if $posts }}
+      {{ with index $posts 0 }}
+      <a class="home-destaque" href="{{ .Permalink }}">
+        <div class="post-card-capa">
+          {{ $imagens := .Resources.ByType "image" }}
+          {{ with $imagens.GetMatch "*cover*" }}<img class="{{ if gt .Height .Width }}recortar{{ end }}" src="{{ .Permalink }}" alt="" loading="lazy">{{ end }}
+        </div>
+        <span class="home-chip">Latest post</span>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Summary | plainify | htmlUnescape | truncate 130 }}</p>
       </a>
-    </center>
-
-
-
-<br />
-<br />
-<br />
-<br />
-
-
-
-
-<div class="main-content">
-<section class="recent-posts">
-  
-<div class="sobre-home">
-  
-  <div class = "img-wrapper">
-    <img width="230" src="/static/sobre_files/author.jpg" alt="" loading="lazy">
-  </div>
-
-  <div class="textblock">
-
-    <h4>Hi, I'm Fernanda Peres</h4>
-    <p>I'm a scientist who loves working with data. For years, I've been helping researchers bring their projects to life through data analysis.</p>
-
-     <a href="https://en.fernandafperes.com.br/about" class="buttonsobrehome">
-     Check out my full CV
-     </a>
-  
-  </div>
-
-</div>
-
-</section>
-</div>
-
-
-    {{ if isset .Site.Params.index "alertbar" }}
-    	{{ if .Site.Params.index.alertbar }}
-            {{- partial "_shared/alertbar.html" . -}}
-        {{ end }}
+      {{ end }}
     {{ end }}
-{{end}}
+  </section>
+
+
+  <!-- ============ BLOCO 2: MAIS POSTS ============ -->
+  <section>
+    <h2>More from the blog</h2>
+    <div class="row">
+      {{ range first 3 (after 1 $posts) }}
+        {{ partial "list-partials/postbox.html" . }}
+      {{ end }}
+    </div>
+    <p class="home-centro"><a class="botao botao-contorno" href="/blog/">See all posts</a></p>
+  </section>
+
+
+  <!-- ============ BLOCO 3: SOBRE (quadrado preto + foto redonda) ============ -->
+  <section class="home-sobre">
+    <img src="/static/sobre_files/author.jpg" alt="Fernanda Peres" loading="lazy">
+    <div>
+      <h2>Hi, I'm Fernanda Peres</h2>
+      <p>I'm a scientist who loves working with data. For years, I've been helping researchers bring their projects to life through data analysis.</p>
+      <a class="botao" href="/about/">Check out my full CV</a>
+    </div>
+  </section>
+
+</div>
+
+{{ if isset .Site.Params.index "alertbar" }}
+  {{ if .Site.Params.index.alertbar }}
+    {{- partial "_shared/alertbar.html" . -}}
+  {{ end }}
+{{ end }}
+{{ end }}
 
 {{ define "footer" }}
     {{- partial "_shared/footer.html" . -}}
-{{end}}
+{{ end }}

@@ -6,7 +6,7 @@
     <div class="post-card-capa">
       {{ $imagens := .Resources.ByType "image" }}
       {{ with $imagens.GetMatch "*cover*" }}
-        <img src="{{ .Permalink }}" alt="" loading="lazy">
+         <img class="{{ if gt .Height .Width }}recortar{{ end }}" src="{{ .Permalink }}" alt="" loading="lazy">
       {{ end }}
     </div>
 
