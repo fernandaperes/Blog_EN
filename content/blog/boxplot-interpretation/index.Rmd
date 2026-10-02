@@ -17,7 +17,11 @@ editor_options:
 image_caption: "Image adapted from the research article of [Schenk & Steppan (2014)](http://en.fernandafperes.com.br/blog/boxplot-interpretation/#ref-schenk2014too)"
 ---
 
+<<<<<<< Updated upstream
  
+=======
+
+>>>>>>> Stashed changes
 ```{r, include=FALSE}
 knitr::opts_chunk$set(fig.width = 5, fig.height = 5, cache = TRUE)
 library(tidyverse)
