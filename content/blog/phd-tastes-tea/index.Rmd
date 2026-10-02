@@ -9,14 +9,11 @@ summary: 'Understanding p-value, hypothesis testing and significance level with 
 output:
   blogdown::html_page:
     toc: false
+image_credit: "Freepik"
+image_credit_url: "https://www.freepik.com/"
 ---
-<center>
-<font size = '1'>
-Image by <a href="http://www.freepik.com">Freepik</a>
-</font>
-</center>
-  
-<br><br>
+
+
 ```{r, include=FALSE}
 knitr::opts_chunk$set(fig.width = 5, fig.height = 5)
 ```

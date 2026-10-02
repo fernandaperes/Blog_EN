@@ -14,8 +14,8 @@ bibliography: references.bib
 csl: APA.csl
 editor_options: 
   chunk_output_type: console
+image_caption: "Image adapted from the research article of [Schenk & Steppan (2014)](http://en.fernandafperes.com.br/blog/boxplot-interpretation/#ref-schenk2014too)"
 ---
-
 
  
 ```{r, include=FALSE}

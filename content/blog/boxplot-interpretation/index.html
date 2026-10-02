@@ -14,13 +14,14 @@ bibliography: references.bib
 csl: APA.csl
 editor_options: 
   chunk_output_type: console
+image_caption: "Image adapted from the research article of [Schenk & Steppan (2014)](http://en.fernandafperes.com.br/blog/boxplot-interpretation/#ref-schenk2014too)"
 ---
 
 
 
 <p>If you are in academia or work with data analysis, you have probably encountered a somewhat peculiar-looking plot such as the above (based on the research article of <span class="citation">Schenk &amp; Steppan (<a href="#ref-schenk2014too">2014</a>)</span>). This type of plot is named boxplot. In this post, we are going to discuss how to interpret it.</p>
 <p>Boxplot depicts five parameters of the data: minimum value (that is not an outlier), first quartile (Q1), median (= second quartile), third quartile (Q3) and maximum value (that is not an outlier). It also depicts any outlier value. Therefore, to properly interpret a boxplot, we need to understand each of these parameters.</p>
-<p><img src="g2.png" width="450px" style="display: block; margin: auto;" /></p>
+<p><img src="g2.png" alt="" width="450px" style="display: block; margin: auto;" /></p>
 <div id="quartiles-and-median" class="section level3">
 <h3>Quartiles and median</h3>
 <p>As you can see in the figure above, quartiles are the parameters that delimit the box in a boxplot. Ok, but what are quartiles? I find it easier to understand quartiles after understanding the median. So, we will start with the median.</p>
@@ -28,18 +29,18 @@ editor_options:
 <h4>Median</h4>
 <p>The median is the middle value of a dataset after sorting the data in ascending (or descending) order. It means thar the median divided the dataset in two equal parts: 50% od the values will be equal to or lower than the median, and the other 50% of the values will be equal to or higher than the median. Let’s see it in an example.</p>
 <p>Note that in the dataset below (already sorted in ascending order), the value 30 occupies the central position: 50% of the values are lower than 30, and the other 50% are higher.</p>
-<p><img src="g3.png" width="220px" style="display: block; margin: auto;" /></p>
+<p><img src="g3.png" alt="" width="220px" style="display: block; margin: auto;" /></p>
 <p>Ok, but what if we have a dataset with an even number of values? Then the median will be the mean between the two central values, as we can see in the example below.</p>
-<p><img src="g4.png" width="330px" style="display: block; margin: auto;" /></p>
+<p><img src="g4.png" alt="" width="330px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="quartiles" class="section level4">
 <h4>Quartiles</h4>
 <p>The reasoning behind quartiles is similar to the median one. But, instead of dividing the dataset in two equal parts, the quartiles divide it in four equal parts (hence name quartiles), each containing 25% (one quarter) of the data. See that in the example below. Note that quartile 2 is equivalent to the median.</p>
-<p><img src="g5.png" width="470px" style="display: block; margin: auto;" /></p>
+<p><img src="g5.png" alt="" width="470px" style="display: block; margin: auto;" /></p>
 <p>Despite the logic being always the same, the calculation of quartiles may vary. For example, some calculations include the median, others don’t. Therefore, the quartile values calculated by different statistical softwares may differ. To better understand these differences, I suggest the article by <span class="citation">Hyndman &amp; Fan (<a href="#ref-hyndman1996sample">1996</a>)</span>.</p>
 <p>The second quartile (i.e. the median) will be the line divides the boxplot box in two parts. The first quartile (Q1) will be the bottom of the box and the third quartile (Q3) will be the top. The figure below shows a boxplot created with the values from the dataset above. Note that the bottom of the box corresponds to 25, the top to 32 and the line in the center to 28.5.</p>
 <p>We can also notice that the height of the box corresponds to the difference between the third and first quartiles (Q1 - Q3). This difference is called <strong>interquartile range</strong>, and commonly abbreviated as IQR. Note that in the boxplot below the IQR, that is, the height of the box, is equal to 32 - 25 = 7.</p>
-<p><img src="g6.png" width="200px" style="display: block; margin: auto;" /></p>
+<p><img src="g6.png" alt="" width="200px" style="display: block; margin: auto;" /></p>
 </div>
 </div>
 <div id="lower-and-upper-limits" class="section level3">
@@ -68,14 +69,14 @@ Theoretical upper limit = <span class="math inline">\(42.5\)</span></p>
 <p>Our next step will be compare the theoretical limits calculated with the minimum and maximum values of our data.<br />
 You can notice in our dataset there are no values below our theoretical lower limit. Therefore, the true lower limit of our dataset - which will be plotted on the graph - will be the lowest value in the data: 24.<br />
 On the other hand, there is one value above our theoreticall upper limit: 43. This value will be considered an outlier. The true upper limit, which will be plotted on the graph, will be the highest value of our datset excluding the outlier: 35. Given than 43 is an outlier for this dataset, it will be plotted a circle (usually open).</p>
-<p><img src="g7.png" width="450px" style="display: block; margin: auto;" /></p>
+<p><img src="g7.png" alt="" width="450px" style="display: block; margin: auto;" /></p>
 <p>Observe how the boxplot presents this information:</p>
-<p><img src="g6.png" width="200px" style="display: block; margin: auto;" /></p>
+<p><img src="g6.png" alt="" width="200px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="horizontal-boxplots" class="section level3">
 <h3>Horizontal boxplots</h3>
 <p>We can also plot a boxplot with horizontal orientation, with group variable in y-axis and numeric variable in the x-axis, as we can see in the figure below. We will interpret this plot exacly as we have interpreted the previous one.</p>
-<p><img src="g8.png" width="330px" style="display: block; margin: auto;" /></p>
+<p><img src="g8.png" alt="" width="330px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="ok-but-what-about-the-weird-boxplots" class="section level3">
 <h3>Ok, but what about the weird boxplots?</h3>
@@ -91,9 +92,9 @@ Figura 1: Boxplot based on the research article of <span class="citation">Schenk
 <p>In the Faculty group, the median is overlapped with Q3 and with the upper limit - in other words, for this group, the median, Q3, and the upper limit are identical. That is why we don’t see the “T” projecting itself beyond the top of the box, and it is also why the top of the box is represented by a thicker line than the bottom of the box: this indicates that the median is there, in the top.</p>
 <p>Let’s check some other examples.</p>
 <p>In the plot below, median overlaps with Q1. We know that because the bottom of the box is represented by a thicker line:</p>
-<p><img src="g9.png" width="180px" style="display: block; margin: auto;" /></p>
+<p><img src="g9.png" alt="" width="180px" style="display: block; margin: auto;" /></p>
 <p>In this next plot, the median overlaps with Q1 (the bottom of the box is represented by a thicker line), and the upper limit is overlapped with Q3 (there is no “T” extending beyond the upper limit):</p>
-<p><img src="g10.png" width="180px" style="display: block; margin: auto;" /></p>
+<p><img src="g10.png" alt="" width="180px" style="display: block; margin: auto;" /></p>
 </div>
 <div id="when-to-use-a-boxplot" class="section level3">
 <h3>When to use a boxplot?</h3>
@@ -118,7 +119,7 @@ Figura 2: Boxplot based on the research article of <span class="citation">Schenk
   geom_boxplot(outlier.shape = 1, fill = &quot;grey95&quot;) +
   labs(y = &quot;Number of pages&quot;) +
   theme_classic()</code></pre>
-<p><img src="g11.png" width="400px" style="display: block; margin: auto;" /></p>
+<p><img src="g11.png" alt="" width="400px" style="display: block; margin: auto;" /></p>
 <hr />
 </div>
 <div id="references" class="section level3 unnumbered">

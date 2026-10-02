@@ -11,7 +11,7 @@
             <div class="row">
                 <!-- Post Share -->
                 {{ if not .Params.hideshare }}
-                <div class="col-md-2 pl-0">
+                <div class="col-md-2 pl-0 coluna-share">
                     {{- partial "single-partials/share.html" . -}}
                     </div>
                     {{ end }}
@@ -70,7 +70,14 @@
                         <center><img class="featured-image img-fluid" src="{{ .Permalink }}" alt="thumbnail for this post"></center>
                     {{end}}
                     <!-- End Featured Image -->
-
+                  
+                  <!-- Cover Image Subtitle -->
+                  {{ if .Params.image_caption }}
+                      <div class="legenda-imagem">{{ .Params.image_caption | markdownify }}</div>
+                  {{ else if .Params.image_credit }}
+                      <div class="legenda-imagem"><p>Image by {{ if .Params.image_credit_url }}<a href="{{ .Params.image_credit_url }}" target="_blank" rel="noopener">{{ .Params.image_credit }}</a>{{ else }}{{ .Params.image_credit }}{{ end }}</p></div>
+                  {{ end }}
+                  <!-- End Cover Image Subtitle -->
 
                     <!-- Post Content -->
                     <div class="article-post">
@@ -81,10 +88,10 @@
                     <!-- Next and PrevPage inside current section -->
                     <div class="row PageNavigation d-flex justify-content-between font-weight-bold after-post">
                     {{with .NextInSection}}
-                        <a class="d-block col-md-6" href="{{.Permalink}}"> &laquo; {{.Title}}</a>
+                        <a class="d-block col-md-6" href="{{.Permalink}}"><small>&laquo; Next post</small><span>{{.Title}}</span></a>
                     {{end}}
                     {{with .PrevInSection}}
-                        <a class="d-block col-md-6 text-lg-right" href="{{.Permalink}}">{{.Title}} &raquo;</a>
+                        <a class="d-block col-md-6 text-lg-right" href="{{.Permalink}}"><small>Previous post &raquo;</small><span>{{.Title}}</span></a>
                     {{end}}
                     <div class="clearfix"></div>
                     </div>
