@@ -6,7 +6,7 @@ slug: [boxplot-interpretation]
 categories: []
 tags: ['dataviz', 'ggplot2']
 comments: yes
-summary: ''
+summary: 'The boxplot, also known as a box-and-whisker plot, is a widely used graph in academic research and data analysis. But do you know how to interpret one? In this post, we’ll take a look at how to create and interpret a boxplot.'
 output:
   blogdown::html_page:
     toc: false
@@ -17,11 +17,7 @@ editor_options:
 image_caption: "Image adapted from the research article of [Schenk & Steppan (2014)](http://en.fernandafperes.com.br/blog/boxplot-interpretation/#ref-schenk2014too)"
 ---
 
-<<<<<<< Updated upstream
- 
-=======
-
->>>>>>> Stashed changes
+  
 ```{r, include=FALSE}
 knitr::opts_chunk$set(fig.width = 5, fig.height = 5, cache = TRUE)
 library(tidyverse)
