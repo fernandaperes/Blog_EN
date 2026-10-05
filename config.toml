@@ -76,3 +76,7 @@ Currently trying to get this blog running, still don't know what the blog will b
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+      
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  
