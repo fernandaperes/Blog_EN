@@ -573,6 +573,15 @@ html body .legenda-imagem a:hover {
     padding-left: 14px;
     padding-right: 14px;
   }
+  html body .home-lead {
+    font-size: 1.05rem;            /* subtítulo menor (antes 1.2rem) */
+    margin-bottom: 20px;
+  }
+  html body .home-abertura .botao {
+    font-size: 14px;               /* botões menores, só no hero */
+    padding: 9px 18px;
+    margin-right: 6px;
+  }
 }
 
 
