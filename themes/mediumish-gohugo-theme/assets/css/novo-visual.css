@@ -173,10 +173,7 @@ html body .container h4 {
 .botao-claro { background: #fff; border-color: #fff; color: #000; }   /* para fundo preto */
 .botao-claro:hover { background: var(--azul); border-color: var(--azul); color: #fff; }
 
-html body .botao,
-html body .botao:hover {
-  font-family: "Nunito", system-ui, sans-serif;
-}
+
 
 /* Bloco 1: abertura */
 .home-abertura {
@@ -544,4 +541,36 @@ html body .legenda-imagem a {
 html body .legenda-imagem a:hover {
   color: #000;
   text-decoration-color: var(--azul);
+}
+
+
+/* ===== Ajustes de celular: cabeçalho e home ===== */
+@media (max-width: 767px) {
+
+  /* 1 e 2. Logo centralizado em cima, menu em uma linha embaixo */
+  html body .site-cabecalho .barra {
+    flex-direction: column;       /* logo em cima, menu embaixo */
+    align-items: center;          /* tudo centralizado */
+    gap: 6px;
+    padding: 12px 0 8px;
+  }
+  html body .site-cabecalho img {
+    height: 38px;                 /* logo um pouco menor no celular */
+  }
+  html body .site-cabecalho nav {
+    flex-wrap: nowrap;            /* impede a quebra em duas linhas */
+    justify-content: center;
+    gap: 2px;
+  }
+  html body .site-cabecalho nav a {
+    font-size: 14px;
+    padding: 6px 10px;            /* menos espaço lateral em cada item */
+    white-space: nowrap;
+  }
+
+  /* 3. Mais respiro nas laterais da home inteira */
+  html body .home {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 }
